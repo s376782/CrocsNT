@@ -1,3 +1,4 @@
+import 'package:crocsnt/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -28,12 +29,36 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return GoogleMap(
-      onMapCreated: _onMapCreated,
-      initialCameraPosition: CameraPosition(
-        target: _center,
-        zoom: 11.0,
-      ),
+    return Stack(
+      children: [
+        GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: CameraPosition(
+            target: _center,
+            zoom: 11.0,
+          ),
+        ),
+        const SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(Constants.defaultPadding),
+            child: TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.all(Radius.circular(50))
+                ),
+                hintText: 'Search location',
+                prefixIcon: Padding(
+                  padding: EdgeInsets.symmetric(vertical: Constants.defaultPadding * 0.75),
+                  child: Icon(Icons.search),
+                )
+              ),
+            )
+          )
+        )
+      ],
     );
   }
 }
