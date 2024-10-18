@@ -1,16 +1,8 @@
 # crocsnt
 
-A new Flutter project.
+Hi, we are CROCSNT team, welcome to our Project. 
 
-## Getting Started
+## About the project
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+we have developed an app using flutter. The app is based on an alert system for users in the Northern in relation to crocodiles. The app is designed to give the user an interface where he/she can track if there is any crocodiles in the area & predict the possibility of one being there. It sends a notification to the user, additionally the app also has an emergency contact page, a survival skills page and a page where the user can record/take picture and send it to wild life services of a crocodile seen or potential of one there. 
