@@ -12,13 +12,13 @@ class SurvivalSkillListScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.blue),
-          onPressed: () {
-            // Go back to the previous screen or exit the app if there is no previous screen
-            Navigator.pop(context);
-          },
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back, color: Colors.blue),
+        //   onPressed: () {
+        //     // Go back to the previous screen or exit the app if there is no previous screen
+        //     Navigator.pop(context);
+        //   },
+        // ),
         title: const Text(
           'Survival Skills',
           style: TextStyle(color: Colors.black),
@@ -56,14 +56,14 @@ class SurvivalSkillListScreen extends StatelessWidget {
                   context,
                   'Crocodile tips for travelling in NT',
                   'https://mr-travl.com/img/2729/gallery/crocarena-5.jpg',
-                  'Stay Alert: Always be cautious near water bodies, especially during dawn and dusk.Avoid Swimming: Do not swim in rivers or estuaries with warning signs. Keep Distance: Never approach crocodiles or their nests. Follow Local Guidelines: Adhere to advice from park rangers and local authorities. Stay in Designated Areas: Use marked paths and viewing platforms for safety. Educate Yourself: Learn about crocodile behavior to stay informed and safe.'
+                  '- Stay Alert:\n Always be cautious near water bodies, especially during dawn and dusk.\n- Avoid Swimming:\n Do not swim in rivers or estuaries with warning signs.\n- Keep Distance:\n Never approach crocodiles or their nests.\n- Follow Local Guidelines:\n Adhere to advice from park rangers and local authorities. \n- Stay in Designated Areas:\n Use marked paths and viewing platforms for safety.\n- Educate Yourself:\n Learn about crocodile behavior to stay informed and safe.'
                 ),
                 const SizedBox(height: 10),
                 _buildSkillCard(
                   context,
                   'Crocodile history in NT',
                   'https://i0.wp.com/www.museumoflost.com/wp-content/uploads/20220504_122852.jpg?fit=1400%2C788&ssl=1',
-                  'Saltwater crocodiles have inhabited the Northern Territory for millions of years, playing a crucial role in the region ecosystem. However, by the 1970s, these majestic reptiles faced severe threats from hunting and habitat loss, leading to a significant decline in their population. In response, strict conservation measures were enacted, allowing their numbers to rebound. Among the most famous crocodiles in NT history is Sweetheart, a large saltwater crocodile that became notorious in the 1970s for attacking boats in the Adelaide River. After numerous attempts to capture Sweetheart, he was eventually shot in 1979, leading to public outcry. His remains were preserved and now serve as a reminder of the need for wildlife conservation. Today, saltwater crocodiles are protected, and educational efforts emphasize their ecological importance, ensuring a greater understanding of these fascinating creatures.'
+                  'Saltwater crocodiles have inhabited the Northern Territory for millions of years, playing a crucial role in the region ecosystem. However, by the 1970s, these majestic reptiles faced severe threats from hunting and habitat loss, leading to a significant decline in their population. In response, strict conservation measures were enacted, allowing their numbers to rebound.\n Among the most famous crocodiles in NT history is Sweetheart, a large saltwater crocodile that became notorious in the 1970s for attacking boats in the Adelaide River. After numerous attempts to capture Sweetheart, he was eventually shot in 1979, leading to public outcry. His remains were preserved and now serve as a reminder of the need for wildlife conservation.\n Today, saltwater crocodiles are protected, and educational efforts emphasize their ecological importance, ensuring a greater understanding of these fascinating creatures.'
                 ),
               ],
             ),
@@ -129,9 +129,9 @@ class DetailScreen extends StatelessWidget {
       ),
       body: Container(
         alignment: Alignment.topLeft, // Aligns to the top left
-        padding: const EdgeInsets.all(5.0), // Optional: Adds padding for spacing
+        padding: const EdgeInsets.all(10.0), // Optional: Adds padding for spacing
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.network(imageUrl),
             const SizedBox(height: 20),
@@ -145,7 +145,7 @@ class DetailScreen extends StatelessWidget {
               child: Text(
                 description,
                 style: const TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.justify,
               ),
             ),
           ],
