@@ -27,6 +27,47 @@ class _MapScreenState extends State<MapScreen> {
     mapController = controller;
   }
 
+  void _showWarningDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.red,
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'CROCODILE WARNING!',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'You are very close to the crocodile area. Proceed with caution and be Crocwise.\n\n'
+                'Risk Level: High\n\n'
+                'Stay away from the water’s edge and follow all safety guidelines. Crocodiles may be present, and encounters can be dangerous.',
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                style: ElevatedButton.styleFrom(foregroundColor: Colors.red, backgroundColor: Colors.white),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -57,7 +98,16 @@ class _MapScreenState extends State<MapScreen> {
               ),
             )
           )
-        )
+        ),
+        Positioned(
+            bottom: 200,
+            right: 200,
+            child: FloatingActionButton(
+              backgroundColor: const Color.fromRGBO(246, 17, 1, 1).withOpacity(0.5),
+              onPressed: _showWarningDialog, // Show dialog when button is pressed
+              child: const Icon(Icons.warning, color: Colors.white),
+            ),
+        ),
       ],
     );
   }
